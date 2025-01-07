@@ -5,24 +5,43 @@
       margin: auto;
     }
   </style>
-  <meta http-equiv="refresh" content="2">
+  <meta http-equiv="refresh" content="3">
   <body onload="setText()">
     <div class="content">
-      <h1 align="center" style="font-size:4vw;">NC Labor Commissioner Candidate</h1>
       <p align="center" style="font-size:8vw;" id="p1"></p>
+      <a href="" align="center" style="font-size:6vw;" id="l1">link</a>
+      
       <script>
-        function randomName(first, last) {
-          return first[Math.floor(Math.random() * first.length)] + " " + last[Math.floor(Math.random() * last.length)];
-        }
         function setText() {
-          var first = ["Harry", "Terry", "Terri", "Gerri", "Perry", "Mary", "Jerry", "Kari", "Sherri", "Gary", "Larry", "Barry", "Garry", "Barrie", "Jeri", "Sherrie", "Cherrie", "Tere", "Carrie", "Berri", "Kerri", "Marri", "Clari", "Harri", "Keri", "Cheri", "Bary", "Eri", "Sheri"];
-          var last = ["Oteri", "McClary", "McCrary", "Carey", "Gehry", "Derry", "Kerry", "Terry", "Sperry", "Perry", "Gerry", "Cary",  "Librairie", "MacQuarie", "Imprimerie", "Seri", "Teri", "Neri", "Ameri", "Clary", "Ferri", "Arie", "MacQuarrie", "Jere", "McGarry", "Kaveri", "Glengarry", "Wari", "Palmeri", "Palmieri", "Valeri", "McNary", "Verry", "Lary", "Boveri", "Gasperi", "Ceri", "Werry", "Azeri", "Potere", "Airey",  "Camilleri", "Stary", "Ferrie", "Fairey"];
           var p1 = document.getElementById("p1");
-          var fullname = randomName(first, last);
-          p1.innerHTML = fullname
-          console.log(fullname);
+          var a = document.getElementById("l1");
+
+          const urlParams = new URLSearchParams(window.location.search);
+          if (urlParams.has('noun')) {
+            const noun = urlParams.get('noun');
+            const fullText = noun + " is medicine.";
+            p1.innerHTML = fullText;
+
+            const myUrlWithParams = new URL('https://davidbradway.github.io/ismedicine/');
+            myUrlWithParams.searchParams.append("noun", noun);
+            a.href = myUrlWithParams.href;
+            //console.log(myUrlWithParams.href);
+          }
+          else {
+            var first = ["Music","Mud","Mom","March","Mark","Mason","Mass","Mercury","Manitoba","Margaritaville","March","Maryland","Mark","Matthew","Maverick","Mercedes-Benz","Mercury","Messi","Messiah","Meta","Miami","Michigan","Microsoft","Midwest","Minnesota","Monday","Montana","Muhammed","Maestro","Magic","Mettle","Mercy","Method","Might","Machinery","Mail","Marriage","Market","Mass","Medication","Melody","Money","Madness","Magic","Magnetism","Magnification","Magnificence","Mahogany","Mainstream","Maintenance","Majesty","Makeup","Malevolence","Management","Maneuverability","Manhood","Mango","Manufacturing","Manure","Map","Maple","Mapping","Marathon","Marijuana","Marinade","Marketability","Marketing","Marketplace","Marksmanship","Marmalade","Marriage","Martini","Mascara","Masculinity","Masonry","Massage","Matchmaking","Math","Matter","Maturation","Maturity","Mayonnaise","Mayorship","Mealtime","Meat","Media","Medication","Medicine","Mediocrity","Meditation","Melodrama","Melody","Melting","Memory","Mercury","Mercy","Merging","Merit","Merriment","Metabolism","Metal","Metaphor","Meter","Method","Methodology","Midday","Might","Mildew","Mind","Ministry","Miracle","Misbehavior","Mischief","Misconception","Misfortune","Mission","Mist","Mistaking","Mistrust","Misunderstanding","Misuse","Mitigation","Moderation","Modernism","Modernization","Modesty","Moisture","Mom","Momentum","Monacle","Money","Monomer","Monotony","Mood","Moonlight","Morale","Morality","Morning","Morphology","Mortality","Motherhood","Motion","Motivation","Motive","Motto","Moustache","Movement","Mud","Mulch","Multiplication","Multiplicity","Murder","Muscle","Muse","Museum","Mushroom","Music","Musket","Mustache","Mustard","Mutilation","Mutiny","Muttering","Mutton","Mutuality","Muzzle","Myrrh","Mystery","Mysticism","Myth","Mythology"];
+            var p1 = document.getElementById("p1");
+            const noun = first[Math.floor(Math.random() * first.length)];
+            const fullText = noun + " is medicine.";
+            p1.innerHTML =  fullText;
+
+            const myUrlWithParams = new URL('https://davidbradway.github.io/ismedicine/');
+            myUrlWithParams.searchParams.append("noun", noun);
+            a.href = myUrlWithParams.href
+            //console.log(myUrlWithParams.href);
+          }
         }
       </script>
     </div>
+    <div class="content"><a href="index.html" align="center" style="font-size:6vw;" id="l1">random</a></div>
   </body>
 </html>

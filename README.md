@@ -1,3 +1,3 @@
 Setup Pages for a joke
 
-https://davidbradway.github.io/nclaborcommissioner/
+https://davidbradway.github.io/ismedicine/
